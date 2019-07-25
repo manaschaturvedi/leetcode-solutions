@@ -27,4 +27,4 @@ class Solution:
 					return [i, j]
 
 sol = Solution()
-print(sol.twoSum([1, 5, 5, 1], 10))
+print(sol.twoSum([1, 5, 5, 1], 10))  # [1, 2]
