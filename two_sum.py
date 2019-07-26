@@ -11,20 +11,27 @@ Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1]
 
 '''
-
+# Approach 1: O(N)
 class Solution:
-	def twoSum(self, nums, target):
-		'''
-		Parameters:
-			nums: List[int]
+    def twoSum(self, nums, target):
+        '''
+        Parameters:
+            nums: List[int]
 			target: int
-		Output:
-			List[int]
-    	'''
-		for i in range(len(nums)):
-			for j in range(1, len(nums)):
-				if nums[i] + nums[j] == target and i != j:
-					return [i, j]
+ 		Output:
+ 			List[int]
+     	'''
+        for index in range(len(nums)):
+            if target - nums[index] in nums[index+1:]:
+                return [index, nums.index(target-nums[index],index+1)]
 
 sol = Solution()
 print(sol.twoSum([1, 5, 5, 1], 10))  # [1, 2]
+
+# Approach 2: O(N^2)
+# class Solution:
+# 	def twoSum(self, nums, target):
+# 		for i in range(len(nums)):
+# 			for j in range(1, len(nums)):
+# 				if nums[i] + nums[j] == target and i != j:
+# 					return [i, j]
