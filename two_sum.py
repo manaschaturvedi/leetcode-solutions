@@ -17,9 +17,9 @@ class Solution:
         '''
         Parameters:
             nums: List[int]
-			target: int
- 		Output:
- 			List[int]
+		target: int
+ 	    Output:
+ 	        List[int]
      	'''
         for index in range(len(nums)):
             if target - nums[index] in nums[index+1:]:
